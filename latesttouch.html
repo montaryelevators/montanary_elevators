@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our elegant and space-efficient home lifts with detailed features, benefits, and a beautiful gallery. Perfect for modern homes.">
+    <title>Home Lift Details</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+        header img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #007BFF;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #007BFF;
+            margin: 20px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #007BFF;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .overview {
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        .product-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.image-item {
+    text-align: center; /* Center align the image and name */
+}
+
+.product-gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.image-name {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+    text-transform: capitalize;
+}
+
+a {
+    text-decoration: none; /* Remove default link underline */
+}
+
+/* Lightbox Styles */
+/* Lightbox Styles */
+.lightbox {
+    display:flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.lightbox img {
+    max-width: 100%;
+    max-height: 90vh; /* 90% of the viewport height */
+    object-fit: contain; /* Ensures the image maintains its aspect ratio */
+    border-radius: 8px;
+}
+
+.lightbox .caption {
+    color: white;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Close button styling */
+.lightbox .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    padding: 5px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+/* Optional: Styles for when images are viewed in mobile */
+@media (max-width: 768px) {
+    .lightbox img {
+        max-width: 90%;
+        max-height: 80vh;
+    }
+}
+
+
+/* Responsive Grid */
+@media (max-width: 1024px) {
+    .product-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .product-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .product-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+        .features, .benefits {
+            margin: 20px 0;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            padding-left: 10px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 30px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            ul li {
+                font-size: 0.95rem;
+            }
+
+            .container {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            ul li {
+                font-size: 0.9rem;
+            }
+
+            .back-button {
+                font-size: 0.9rem;
+                padding: 8px 15px;
+            }
+        }
+        @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+    </style>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <h1><img src="logo.png" alt="Company Logo">montanary_elevators</h1>
+        <nav>
+            <button id="menu-toggle" style="display: none;">☰</button>
+
+            <ul>
+                <li><a href="index.html">About Us</a></li>
+                <li><a href="index.html">Services</a></li>
+
+                <li><a href="index.html">products</a></li>
+                <li><a href="#videos">Videos</a></li>
+
+                <li><a href="index.html">Projects</a></li>
+                
+                <li><a href="index.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>LATEST TOUCH SCREEN LIFTS</h1>
+    <div class="container">
+        <h2 class="section-title">Overview</h2>
+        <p class="overview">Our Latest Touch Screen Lifts redefine convenience and sophistication. Combining cutting-edge touch technology with a sleek design, they are perfect for modern living spaces. These lifts provide intuitive and effortless operation, enhancing the user experience.</p>
+    
+    <h2 class="section-title">Gallery</h2>
+    <div class="product-gallery">
+        <div class="image-item">
+            <a href="homelift2.jpg" data-caption="Swing Door Full Glass">
+                <img src="homelift2.jpg" alt="Swing Door Full Glass">
+            </a>
+            <p class="image-name">Swing Door Full Glass</p>
+        </div>
+        <div class="image-item">
+            <a href="homelift3.jpg" data-caption="M.S Slideling Door Big Vision">
+                <img src="homelift3.jpg" alt="M.S Slideling Door Big Vision">
+            </a>
+            <p class="image-name">M.S Slideling Door Big Vision</p>
+        </div>
+        <div class="image-item">
+            <a href="homelift4.jpg" data-caption="SS Big Vision">
+                <img src="homelift4.jpg" alt="SS Big Vision">
+            </a>
+            <p class="image-name">SS Big Vision</p>
+        </div>
+        <div class="image-item">
+            <a href="homelift5.jpg" data-caption="SS Plian Automatic Center Opening Door">
+                <img src="homelift5.jpg" alt="SS Plian Automatic Center Opening Door">
+            </a>
+            <p class="image-name">SS Plian Automatic Center Opening Door</p>
+        </div>
+    <div class="video-item">
+        <video controls width="100%" height="200">
+            <source src="tochpadmodel.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p class="video-name">Advanced Touch Screen Features - Video 2</p>
+    </div>
+</div>
+
+
+    <h2 class="section-title">Features</h2>
+    <div class="features">
+        <ul>
+            <li>Interactive touch screen panels for intuitive operation.</li>
+            <li>Modern aesthetics to complement luxury interiors.</li>
+            <li>Energy-efficient motors for eco-friendly performance.</li>
+            <li>Advanced safety systems with auto-diagnosis features.</li>
+        </ul>
+    </div>
+
+    <h2 class="section-title">Benefits</h2>
+    <div class="benefits">
+        <ul>
+            <li>Enhances user experience with innovative touch technology.</li>
+            <li>Seamlessly integrates with smart home systems.</li>
+            <li>Improves accessibility for individuals with limited mobility.</li>
+            <li>Increases the property value with its modern design.</li>
+        </ul>
+    </div>
+
+    <a href="index.html" class="back-button">Back to Products</a>
+</div>
+
+<footer>
+    <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.getElementById("menu-toggle");
+        const nav = document.querySelector("nav ul");
+
+        const handleResize = () => {
+            if (window.innerWidth <= 768) {
+                menuToggle.style.display = "block";
+                nav.style.display = "none";
+            } else {
+                menuToggle.style.display = "none";
+                nav.style.display = "flex";
+            }
+        };
+
+        menuToggle.addEventListener("click", () => {
+            nav.style.display = nav.style.display === "none" || nav.style.display === "" ? "flex" : "none";
+        });
+
+        handleResize();
+        window.addEventListener("resize", handleResize);
+
+        const images = document.querySelectorAll(".product-gallery a");
+        const lightbox = document.createElement("div");
+        lightbox.classList.add("lightbox");
+        const img = document.createElement("img");
+        const caption = document.createElement("div");
+        caption.classList.add("caption");
+        lightbox.appendChild(img);
+        lightbox.appendChild(caption);
+        document.body.appendChild(lightbox);
+
+        images.forEach(image => {
+            image.addEventListener("click", (e) => {
+                e.preventDefault();
+                img.src = image.href;
+                caption.textContent = image.getAttribute("data-caption");
+                lightbox.style.display = "flex";
+            });
+        });
+
+        lightbox.addEventListener("click", () => {
+            lightbox.style.display = "none";
+        });
+    });
+
+    // document.addEventListener("DOMContentLoaded", () => {
+    //     const videos = document.querySelectorAll(".fullscreen-video");
+
+    //     videos.forEach(video => {
+    //         video.addEventListener("click", () => {
+    //             if (video.requestFullscreen) {
+    //                 video.requestFullscreen(); // Standard browsers
+    //             } else if (video.webkitRequestFullscreen) {
+    //                 video.webkitRequestFullscreen(); // Safari
+    //             } else if (video.msRequestFullscreen) {
+    //                 video.msRequestFullscreen(); // IE/Edge
+    //             }
+    //         });
+    //     });
+    // });
+    // document.addEventListener("DOMContentLoaded", () => {
+    //     const videos = document.querySelectorAll(".fullscreen-video");
+
+    //     videos.forEach(video => {
+    //         video.addEventListener("click", () => {
+    //             if (video.requestFullscreen) {
+    //                 video.requestFullscreen(); // Standard browsers
+    //             } else if (video.webkitRequestFullscreen) {
+    //                 video.webkitRequestFullscreen(); // Safari
+    //             } else if (video.msRequestFullscreen) {
+    //                 video.msRequestFullscreen(); // IE/Edge
+    //             } else if (video.playsInline) {
+    //                 // Plays inline for mobile browsers that don't support fullscreen natively
+    //                 video.playsInline = true;
+    //             }
+    //         });
+
+    //         // Handle touch gesture for better interaction on mobile
+    //         video.addEventListener("touchstart", () => {
+    //             video.play(); // Play video automatically on touch
+    //         });
+    //     });
+    // });
+
+    
+</script>
+</body>
+</html>
